@@ -20,7 +20,7 @@ pipeline {
   stage('push image') {
      steps{
         
-              sh 'docker login -u "$registry" -p "$registryCredential"'
+              sh 'docker login -u "sachin41" -p "14121993"'
               sh  'docker push  sachin41/test:$BUILD_NUMBER'          
           
        }
