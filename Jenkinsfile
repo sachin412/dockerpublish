@@ -13,14 +13,14 @@ pipeline {
        }
      }
   }     
-   stage('push image') {
+ /*  stage('push image') {
      steps{
         withDockerRegistry([ credentialsId: "$registryCredential", url: "https://registry.hub.docker.com/sachin41" ]) {
           sh  'docker push  sachin41/test:$BUILD_NUMBER'          
          } 
        }
      }
-  
+  */
   
   
  }
