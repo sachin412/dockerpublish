@@ -9,7 +9,7 @@ pipeline {
     steps{
       script {
         docker.build registry + ":$BUILD_NUMBER"
-         docker push   
+         sh  'docker push  sachin41/test:$BUILD_NUMBER' 
        }
      }
    } 
