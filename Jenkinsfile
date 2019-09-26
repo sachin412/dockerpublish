@@ -13,8 +13,9 @@ pipeline {
     steps{
       script {
        def app = docker.build registry + ":$BUILD_NUMBER"
+	      docker.withRegistry("https://cloud.docker.com", 'docker-hub'){
 	      app.push()
-         
+	      }
        }
      }
   }     
