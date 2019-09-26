@@ -4,7 +4,7 @@ pipeline {
 	pswd = 14121993
 		} */
       environment {
-    registry = "sachin41/test"
+    registry = "sachin41/myubuntuapache"
     registryCredential = '14121993'
         }
    agent any 
@@ -21,7 +21,7 @@ pipeline {
      steps{ 
       withDockerRegistry([credentialsId: 'docker-hub', url: 'https://cloud.docker.com/u/sachin41/repository/docker/sachin41']) {
              
-	      sh 'docker push sachin41/test:$BUILD_NUMBER)'    
+	      sh 'docker push sachin41/myubuntuapache:$BUILD_NUMBER)'    
   }
        }
      }
