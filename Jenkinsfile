@@ -12,7 +12,8 @@ pipeline {
   stage('Building image') {
     steps{
       script {
-        docker.build registry + ":$BUILD_NUMBER"
+       def app = docker.build registry + ":$BUILD_NUMBER"
+	      app.push()
          
        }
      }
