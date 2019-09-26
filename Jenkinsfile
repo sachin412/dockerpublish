@@ -11,7 +11,7 @@ node {
 
 	stage('Test') {
 		app.inside {
-			sh 'echo "hello"'
+			sh 'apt install gnupg2 pass -y'
 		}
 	}
 
