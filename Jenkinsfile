@@ -19,7 +19,7 @@ pipeline {
   }     
   stage('push image') {
      steps{ 
-      withDockerRegistry([credentialsId: 'docker-hub', url: 'https://cloud.docker.com/u/sachin41/repository/docker/sachin41']) {
+      withDockerRegistry([credentialsId: 'docker-hub', url: 'https://cloud.docker.com']) {
              
 	      sh 'docker push sachin41/myubuntuapache:$BUILD_NUMBER)'    
   }
