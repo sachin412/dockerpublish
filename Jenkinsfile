@@ -19,9 +19,9 @@ pipeline {
   }     
  stage('Deploy Image') {
       steps{         
-           docker.withRegistry('', 'docker-hub') 
+	      docker.withRegistry('', 'docker-hub') {
            app.push("letest")          
-        
+	      }
       }
     }
   
