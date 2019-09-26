@@ -19,10 +19,9 @@ pipeline {
   }     
  stage('Deploy Image') {
       steps{
-        script {
-          docker.withRegistry( 'https://hub.docker.com/sachin41', 'docker-hub' ) {
-            dockerImage.push()
-          }
+         
+           sh 'docker login --username sachin41 --password 14121993'
+           sh 'docker push sachin41/myubuntuapache:$BUILD_NUMBER'           
         }
       }
     }
