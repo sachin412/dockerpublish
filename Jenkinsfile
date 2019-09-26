@@ -13,7 +13,7 @@ pipeline {
     steps{
       script {
        def app = docker.build registry + ":$BUILD_NUMBER"
-	      docker.withRegistry("https://cloud.docker.com", 'docker-hub'){
+	      docker.withRegistry("docker.io/sachin41", 'docker-hub'){
 	      app.push()
 	      }
        }
