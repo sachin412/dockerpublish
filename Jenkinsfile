@@ -12,17 +12,17 @@ pipeline {
   stage('Building image') {
     steps{
       script {
-        docker.build registry + ":$BUILD_NUMBER"
+        docker.build registry + ":"
          
        }
      }
   }     
   stage('push image') {
-     steps{
-        
-              sh 'docker login -u "sachin41" -p "14121993"'
-              sh  'docker push  sachin41/test:$BUILD_NUMBER'          
-          
+     steps{ 
+      withDockerRegistry([credentialsId: 'docker-hub', url: 'https://cloud.docker.com/u/sachin41/repository/docker/sachin41/test']) {
+      sh 'docker push sachin41/test:$BUILD_NUMBER)'
+    ....
+  }
        }
      }
   
