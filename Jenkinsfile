@@ -19,8 +19,9 @@ pipeline {
   }     
   stage('push image') {
      steps{ 
-      withDockerRegistry([credentialsId: 'docker-hub', url: 'https://cloud.docker.com/u/sachin41/repository/docker/sachin41/test']) {
-      sh 'docker push sachin41/test:$BUILD_NUMBER)'    
+      withDockerRegistry([credentialsId: 'docker-hub', url: 'https://cloud.docker.com/u/sachin41/repository/docker/sachin41']) {
+             
+	      sh 'docker push sachin41/test:$BUILD_NUMBER)'    
   }
        }
      }
