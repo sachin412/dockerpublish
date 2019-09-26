@@ -9,9 +9,16 @@ pipeline {
     steps{
       script {
         docker.build registry + ":$BUILD_NUMBER"
-         sh  'docker push  sachin41/test:$BUILD_NUMBER' 
+         
        }
      }
-   } 
+     steps {
+        withDockerRegistry([ credentialsId: "14121993", url: "" ]) {
+          sh  'docker push  sachin41/test:$BUILD_NUMBER'          
+        }
+      }
+  
+  
+  } 
  }
 }
