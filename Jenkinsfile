@@ -13,21 +13,19 @@ pipeline {
     steps{
       script {
        def app = docker.build registry + ":$BUILD_NUMBER"
-	      docker.withRegistry("docker.io/sachin41", 'docker-hub'){
-	      app.push()
-	      }
+	      
        }
      }
   }     
-  stage('push image') {
-     steps{ 
-      withDockerRegistry([credentialsId: 'docker-hub', url: 'https://cloud.docker.com']) {
-             
-	      sh 'docker push sachin41/myubuntuapache:$BUILD_NUMBER)'    
-  }
-       }
-     }
-  
+ stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( '', 'docker-hub' ) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
   
   
  }
