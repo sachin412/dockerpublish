@@ -21,7 +21,7 @@ pipeline {
       steps{   
 	      script {
 	      docker.withRegistry('', 'docker-hub') {
-           sh 'docker push sachin41/myubuntuapache:$BUILD_NUMBER'         
+           sh 'docker push $registry:$BUILD_NUMBER'         
 	      }
 	   }		      
       }
