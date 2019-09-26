@@ -13,9 +13,11 @@ pipeline {
        }
      }
   }     
-     steps {
+     stage {
+           steps{
         withDockerRegistry([ credentialsId: "14121993", url: "docker.io/sachin41" ]) {
           sh  'docker push  sachin41/test:$BUILD_NUMBER'          
+           } 
         }
       }
   
