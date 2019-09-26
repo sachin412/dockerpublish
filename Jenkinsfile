@@ -7,7 +7,7 @@ node {
 
 	stage('Build image') {
 		app = docker.build('sachin41/myubuntuapache')
-		sh 'apt install gnupg2 pass -y'
+		 
 	}
 
 	stage('Test') {
