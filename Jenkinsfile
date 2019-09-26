@@ -19,10 +19,10 @@ pipeline {
   }     
   stage('push image') {
      steps{
-        withDockerRegistry([ credentialsId: "$registryCredential", url: "https://registry.hub.docker.com/sachin41" ]) {
+        
               sh 'docker login -u "$registry" -p "$registryCredential"'
               sh  'docker push  sachin41/test:$BUILD_NUMBER'          
-         } 
+          
        }
      }
   
