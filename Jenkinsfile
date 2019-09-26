@@ -12,7 +12,7 @@ pipeline {
   stage('Building image') {
     steps{
       script {
-       def app = docker.build registry + ":$BUILD_NUMBER"
+       docker.build registry + ":$BUILD_NUMBER"
 	      
        }
      }
@@ -21,7 +21,7 @@ pipeline {
       steps{   
 	      script {
 	      docker.withRegistry('', 'docker-hub') {
-           app.push("letest")          
+           sh 'docker push sachin41/myubuntuapache:$BUILD_NUMBER'         
 	      }
 	   }		      
       }
