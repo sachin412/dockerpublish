@@ -17,6 +17,17 @@ pipeline {
        }
      }
   }     
+	   stage('custom repo') {
+	
+		   steps{
+		   sh 'docker login localhost:5000'
+		   sh 'docker tag node localhost:5000/node1'
+	           sh 'docker push localhost:5000/node1'		   
+		   
+		   }
+		   
+	   }
+	   
  stage('Deploy Image') {
       steps{   
 	      script {
