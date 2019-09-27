@@ -21,8 +21,8 @@ pipeline {
 	
 		   steps{	
 		       
-		   sh 'docker tag node 192.168.3.244:5000/node22'
-	           sh 'docker push 192.168.3.244:5000/node22'		   
+		   sh 'docker tag node 192.168.3.244:5000/node33'
+	           sh 'docker push 192.168.3.244:5000/node33'		   
 		   
 		   }
 		   
