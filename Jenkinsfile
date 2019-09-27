@@ -9,7 +9,7 @@ pipeline {
         }
    agent any 
    stages { 
-  /*stage('Building image') {
+  stage('Building image') {
     steps{
       script {
        docker.build registry + ":$BUILD_NUMBER"
@@ -17,10 +17,10 @@ pipeline {
        }
      }
   }     
-	*/   stage('custom repo') {
+	  stage('custom repo') {
 	
 		   steps{	
-		   sh 'echo { "insecure-registries":["192.168.3.244:5000"] } > /etc/docker/daemon.json' 	   
+		       
 		   sh 'docker tag node 192.168.3.244:5000/node22'
 	           sh 'docker push 192.168.3.244:5000/node22'		   
 		   
