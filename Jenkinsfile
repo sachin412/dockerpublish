@@ -8,7 +8,7 @@ pipeline {
     registryCredential = '14121993'
         }
    agent any 
-   stages {
+   stages { 
   stage('Building image') {
     steps{
       script {
