@@ -9,14 +9,14 @@ pipeline {
         }
    agent any 
    stages { 
-  stage('Building image') {
+  /*stage('Building image') {
     steps{
       script {
        docker.build registry + ":$BUILD_NUMBER"
 	      
        }
      }
-  }     
+  } */    
 	  stage('custom repo') {
 	
 		   steps{	
